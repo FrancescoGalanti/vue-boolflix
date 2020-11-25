@@ -28,7 +28,7 @@ var app = new Vue({
                 // Testing the call API made with JASON //
                 console.log(response)
                 // refenze variable default object "all" //
-                let cdslist = response.result;
+                let cdslist = response.data.response;
                  // Filter appling in cds list if the value is different from "all"
 
                  if (self.movieSearched.trim() !== "") {
