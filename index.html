@@ -16,10 +16,10 @@
     <div id="app">
       <!-- Input that filter the movie handled by vue -->
       <input v-model="movieSearched" @click="SearchingMovie"
-       @keyup="SearchingMovie">
+       @keyup.enter="SearchingMovie">
        <!-- Returning  the array filtered by a function in an loop of array -->
-       <ul>
-         <li></li>
+       <ul v-show="">
+         <li v-for="element in listaFiltered">{{element}}</li>
        </ul>
     </div>
 
