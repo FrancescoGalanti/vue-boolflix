@@ -16,42 +16,28 @@ var app = new Vue({
          // Function that allow to filter the movie per titlte using query
          searchingMovie(){
 
-           const self = this;
+
             // calling the API with Jason //
-            axios.get('https://api.themoviedb.org/3/search/movie?', {
+            axios.get('https://api.themoviedb.org/3/search/movie', {
                   params:{
                     api_key: 'e99307154c6dfb0b4750f6603256716d',
-                    query: self.movieSearched,
+                    query: this.movieSearched,
+                    language: 'it-IT',
                   }
                })
-               .then(function (response) {
-                // Testing the call API made with JASON //
-                console.log(response)
-                // refenze variable default object "all" //
-                let cdslist = response.data.response;
-                 // Filter appling in cds list if the value is different from "all"
 
-                 if (self.movieSearched.trim() !== "") {
-                       cdslist = cdslist.filter(element =>{
-                       // Returning only the elemnt.genre white same value in genreChosen //
-                       return element.title.toLowerCase() === self.movieSearched;
-                   });
+                .then(response =>{
+                  if (this.searchKey != '') {
+                   this.listaFiltered = result.data.results;
+                  }
 
-                 }
-                 // Returnig the list with or withnot the filter applied //
-                 self.listaFiltered = cdslist;
+                 })
+                .catch(error =>{
+                 console.log(error);
+                });
 
-                 console.log(self.listaFiltered)
-
-               })
-                 .catch(function (error) {
-                   alert(error);
-               });
-
-          }
+            }
         }
-
-
 
 
 });
