@@ -27,7 +27,8 @@ var app = new Vue({
                })
 
                 .then(response =>{
-                  if (this.searchKey != '') {
+                  // default situation that leads to not printing any element if the string is empty 
+                  if (this.searchKey.trim() != '') {
                    this.listaFiltered = result.data.results;
                   }
 
