@@ -5,24 +5,19 @@ var app = new Vue({
     el: '#app',
     data: {
 
-     list: [7,8,9],
-     list2: ["a","b","c"],
-     lista3: []
+     // List filtered managed b a function in vue
+     listaFiltered: [],
+     // string of value managed by vue //
+     movieSearched: "",
    },
 
-    created(){
-       this.addNumber();
-    },
+
+
 
 
    methods:{
 
-       addNumber(){
 
-           this.list.map((e, i) =>  this.lista3.push(e + this.list2[i]))
-
-           console.log(lista3)
-         }
 
 
        }
@@ -32,11 +27,4 @@ var app = new Vue({
 
 
 });
-
-
-// const list = [7,8,9]
-// const list2 = ["a","b","c"]
-//
-//
-// var newArray = list.map((e, i) => e + list2[i]);
-// console.log(newArray);
+.

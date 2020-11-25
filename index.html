@@ -14,7 +14,13 @@
 <body>
 
     <div id="app">
-      {{lista3}}
+      <!-- Input that filter the movie handled by vue -->
+      <input v-model="movieSearched" @click="SearchingMovie"
+       @keyup="SearchingMovie">
+       <!-- Returning  the array filtered by a function in an loop of array -->
+       <ul>
+         <li></li>
+       </ul>
     </div>
 
 
