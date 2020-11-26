@@ -13,13 +13,13 @@ var app = new Vue({
 
    created(){
 
-     axios.get('https://api.themoviedb.org/3/search/movie?', {
-           params: {
-             api_key: 'e99307154c6dfb0b4750f6603256716d',
-             query: 'fantozzi',
-             language: 'it-IT',
-            }
-         })
+     axios.get('https://api.themoviedb.org/3/search/movie?' , {
+              params:{
+                api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
+                query: 'fantozzi'
+              }
+
+             })
 
 
            .then(response => {
