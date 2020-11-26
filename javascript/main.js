@@ -56,7 +56,7 @@ var app = new Vue({
                      // referenze varable //
                      const res = response.data.results
                      // concatenation of the two calls to avoid possible delay in data reception
-                     this.listaFiltered = this.results.contact(res)
+                     this.listaFiltered = this.listaFiltered.concat(res)
 
                   })
 
@@ -80,7 +80,7 @@ var app = new Vue({
                            // referenze varable //
                            const res = response.data.results
                            // concatenation of the two calls to avoid possible delay in data reception
-                           this.listaFiltered = this.results.contact(res)
+                           this.listaFiltered = this.listaFiltered.concat(res)
 
                         })
 
@@ -89,6 +89,12 @@ var app = new Vue({
                        });
 
 
-         }
+              },
+
+              getVote(vote){
+                return Math.cell(vote / 2);
+              },
+
+
        }
   });

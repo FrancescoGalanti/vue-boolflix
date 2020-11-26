@@ -37,10 +37,13 @@
              </li>
              <li>
                 <!-- loop to print the star based on vote manage by a function -->
+                <span>voto</span>
                 <i v-for="n in getVote(element.vote_average)"
                    class="fas fa-star"
                 ></i>
-                <i></i>
+                <i v-for="n in 5 - getVote(element.vote_average)"
+                   class="far fa-star"
+                ></i>
              </li>
            </ul>
         </div>
