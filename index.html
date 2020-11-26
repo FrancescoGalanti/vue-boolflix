@@ -29,11 +29,25 @@
            <ul>
              <li>
                 <span>Titolo:</span>
-                <span>{{element.title}}</span>
+                <!-- showing the title that bellongs to movie avoding blanck title-->
+                <span v-if="element.title">
+                  {{element.title}}
+                </span>
+                <!-- showing the title that bellongs to tv avoding blanck title -->
+                <span v-else="element.name">
+                  {{element.name}}
+                </span>
              </li>
              <li>
+               <!--showing the title that bellongs to movie avoding blanck title  -->
                 <span>Titolo originale:</span>
-                <span>{{element.original_title}}</span>
+                <span v-if="element.original_title">
+                  {{element.original_title}}
+                </span>
+                <!--showing the title that bellongs to tv avoding blanck title  -->
+                <span v-else="element.original_name">
+                   {{element.original_name}}
+                </span>
              </li>
              <li>
                 <!-- loop to print the star based on vote manage by a function -->
@@ -48,6 +62,7 @@
              <li>
                 <!-- Printing the flag if the langue is it or eng  -->
                 <span>Lingua:</span>
+                <!-- matching the img with original_language -->
                 <img v-if="isLangFlag(element.original_language)" class="flag"
                   :src="getFlag(element.original_language)"
                   :alt="element.original_language"
