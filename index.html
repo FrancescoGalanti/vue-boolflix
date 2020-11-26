@@ -45,6 +45,16 @@
                    class="far fa-star"
                 ></i>
              </li>
+             <li>
+                <!-- Printing the flag if the langue is it or eng  -->
+                <span>Lingua:</span>
+                <img v-if="isLangFlag(element.original_language)" class="flag"
+                  :src="getFlag(element.original_language)"
+                  :alt="element.original_language"
+                >
+                <!-- Printing the string -->
+                <span v-else>{{element.original_language}}</span>
+             </li>
            </ul>
         </div>
       </div>

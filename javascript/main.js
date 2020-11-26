@@ -39,6 +39,8 @@ var app = new Vue({
        methods:{
          // function that filter  movie and tv series searched
          SearchingMovie(){
+          // avoid duplicate the result
+           this.listaFiltered = []
            // Calling API FOR MOVIE
            axios.get('https://api.themoviedb.org/3/search/movie?' , {
                     params:{
@@ -90,10 +92,19 @@ var app = new Vue({
 
 
               },
-
+              // Function callback with one parames that convert in vote the poit
               getVote(vote){
-                return Math.cell(vote / 2);
+                return Math.ceil(vote / 2);
               },
+              // Function callback that check the lang
+              isLangFlag(lang){
+                // checking if inside the list there is the lang
+                return this.availableFlags.includes(lang)
+              },
+
+              getFlag(lang){
+                return `./img/${lang}.png`
+              }
 
 
        }
