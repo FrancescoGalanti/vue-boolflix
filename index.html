@@ -12,16 +12,39 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-
+    <!-- starting dom in which operate vue -->
     <div id="app">
       <!-- Input that filter the movie handled by vue -->
-      <input v-model="movieSearched"
-       @keyup.enter="SearchingMovie"
-       type="text">
-       <!-- Returning  the array filtered by a function in an loop of array -->
-       <ul v-show="">
-         <li v-for="element in listaFiltered">{{element.title}}</li>
-       </ul>
+      <div class="searxh">
+        <input v-model="movieSearched"
+         @keyup.enter="SearchingMovie"
+         type="text">
+         <!-- Buttom linnked a function managed by vue -->
+         <button @click="SearchingMovie">Search</button>
+      </div>
+      <!-- container that contains the array printed -->
+      <div class="movies-container">
+        <!-- loop of array that print the filtered search -->
+        <div class="movie" v-for="element in listaFiltered">
+           <ul>
+             <li>
+                <span>Titolo:</span>
+                <span>{{element.title}}</span>
+             </li>
+             <li>
+                <span>Titolo originale:</span>
+                <span>{{element.original_title}}</span>
+             </li>
+             <li>
+                <!-- loop to print the star based on vote manage by a function -->
+                <i v-for="n in getVote(element.vote_average)"
+                   class="fas fa-star"
+                ></i>
+                <i></i>
+             </li>
+           </ul>
+        </div>
+      </div>
     </div>
 
 

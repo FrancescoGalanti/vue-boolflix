@@ -9,6 +9,8 @@ var app = new Vue({
      listaFiltered: [],
      // string of value managed by vue //
      movieSearched: "",
+     // list of avible langue //
+     availableFlags: ["it","en"]
    },
 
    created(){
@@ -35,12 +37,14 @@ var app = new Vue({
        },
 
        methods:{
-         // function that filter the movie searched
+         // function that filter  movie and tv series searched
          SearchingMovie(){
+           // Calling API FOR MOVIE
            axios.get('https://api.themoviedb.org/3/search/movie?' , {
                     params:{
                       api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
-                      query: this.movieSearched
+                      query: this.movieSearched,
+                      language: 'it-IT'
                     }
 
                    })
@@ -49,29 +53,40 @@ var app = new Vue({
                  .then(response => {
 
                     console.log(response)
-                     // default situation that leads to not printing any element if the string is empty
-                       if (this.movieSearched != "") {
-                           var movielist = response.data.results;
-                       }
-
-
-
-
-                    // actal filtering movie
-                    movielist = movielist.filter(element =>{
-                      return element.title.includes(this.movieSearched) ;
-                    })
-
-
-                    // testing
-                    this.listaFiltered = movielist;
-                    console.log(this.listaFiltered)
+                     // referenze varable //
+                     const res = response.data.results
+                     // concatenation of the two calls to avoid possible delay in data reception
+                     this.listaFiltered = this.results.contact(res)
 
                   })
 
                  .catch(error => {
                   console.log(error);
                  });
+
+                 // calling API for tv
+                 axios.get('https://api.themoviedb.org/3/search/movie?' , {
+                          params:{
+                            api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
+                            query: this.movieSearched
+                          }
+
+                         })
+
+
+                       .then(response => {
+
+                          console.log(response)
+                           // referenze varable //
+                           const res = response.data.results
+                           // concatenation of the two calls to avoid possible delay in data reception
+                           this.listaFiltered = this.results.contact(res)
+
+                        })
+
+                       .catch(error => {
+                        console.log(error);
+                       });
 
 
          }
