@@ -12,24 +12,24 @@ var app = new Vue({
    },
 
    created(){
-     // Testing API search //
-     axios.get('https://api.themoviedb.org/3/search/movie?' , {
-              params:{
-                api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
-                query: 'fantozzi'
-              }
-
-             })
-
-
-           .then(response => {
-             // default situation that leads to not printing any element if the string is empty
-              console.log(response)
-            })
-
-           .catch(error => {
-            console.log(error);
-           });
+     // // Testing API search //
+     // axios.get('https://api.themoviedb.org/3/search/movie?' , {
+     //          params:{
+     //            api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
+     //            query: 'fantozzi'
+     //          }
+     //
+     //         })
+     //
+     //
+     //       .then(response => {
+     //         // default situation that leads to not printing any element if the string is empty
+     //          console.log(response)
+     //        })
+     //
+     //       .catch(error => {
+     //        console.log(error);
+     //       });
 
 
        },
@@ -50,17 +50,21 @@ var app = new Vue({
 
                     console.log(response)
                      // default situation that leads to not printing any element if the string is empty
+                       if (this.movieSearched != "") {
+                           var movieList = response.data.results;
+                       }
 
-                       let movieList = response.data.results;
+
+
 
                     // actal filtering movie
                     movieList = movieList.filter(element =>{
-                      return element.title.toLowerCase() === this.movieSearched;
+                      return element === this.movieSearched;
                     })
 
                     this.listaFiltered = movieList;
                     // testing
-                    console.log(this.listaFiltered)
+                    // console.log(this.listaFiltered)
 
                   })
 
