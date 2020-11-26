@@ -50,17 +50,17 @@ var app = new Vue({
 
                     console.log(response)
                      // default situation that leads to not printing any element if the string is empty
-                    if (this.movieSearched.trim() !== "") {
+
                        let movieList = response.data.results;
-                    }
+
                     // actal filtering movie
                     movieList = movieList.filter(element =>{
-                      return element.result.toLowerCase() === this.movieSearched;
+                      return element.title.toLowerCase() === this.movieSearched;
                     })
 
                     this.listaFiltered = movieList;
                     // testing
-                    cosole.log(this.listaFiltered)
+                    console.log(this.listaFiltered)
 
                   })
 
