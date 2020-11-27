@@ -65,12 +65,9 @@ var app = new Vue({
 
                      // concatenation of the two calls to avoid possible delay in data reception
                      // Avoiding duplicate serach from start
-                     if (!this.movieSearched.includes.toLowercase("fantozzi")) {
+                     
                         const res = response.data.results
                         this.listaFiltered = this.listaFiltered.concat(res)
-                     }else {
-
-                     }
 
 
                   })
@@ -80,7 +77,7 @@ var app = new Vue({
                  });
 
                  // calling API for tv
-                 axios.get('https://api.themoviedb.org/3/search/movie?' , {
+                 axios.get('https://api.themoviedb.org/3/search/tv?' , {
                           params:{
                             api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
                             query: this.movieSearched
