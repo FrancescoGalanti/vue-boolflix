@@ -27,7 +27,8 @@
 
 
 .app-header img{
-  max-height: 50px;
+  max-height: 30px;
+  margin-top: 5px;
 }
 
 .search{
@@ -89,13 +90,12 @@
 .movie{
   flex-basis: 200px;
   margin: 10px 20px;
-  padding: 20px;
   text-align: center;
   background: #2e3a46;
 }
 
 img{
-  width: 160px;
+  width: 130px;
   height: 210px;
 }
 
@@ -109,12 +109,13 @@ img{
  position: absolute;
  top: 0;
  left: 0;
- width: 100%;
+ width: 130px;
  height: 210px;
  background: rgba(26, 188, 156, .7);
  opacity: 0;
  transition: opacity .4s;
  overflow: hidden;
+ margin-left: 35px;
 }
 .img-layover i{
  position: absolute;
@@ -142,7 +143,8 @@ span{
 .title-big{
   font-weight: 700;
   color: white;
-  font-size: 27px;
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 .title-small{
