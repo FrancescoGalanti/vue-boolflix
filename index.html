@@ -31,6 +31,9 @@
         <div class="movie" v-for="element in listaFiltered">
            <!-- showing th eimage if there is one -->
           <div class="img-wraper">
+            <div class="img-layover">
+              <i class="far fa-play-circle"></i>
+            </div>
             <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" alt=""
                v-if="element.poster_path"
             >
