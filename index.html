@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- starting dom in which operate vue -->
@@ -58,17 +60,24 @@
              <li>
                <!--showing the title that bellongs to movie avoding blanck title  -->
                 <!-- <span>Titolo originale:</span> -->
-                <span v-if="element.original_title">
+                <div class="title-big" v-if="element.original_title">
                   {{element.original_title}}
-                </span>
+                </div>
                 <!--showing the title that bellongs to tv avoding blanck title  -->
-                <span v-else="element.original_name">
+                <div v-else="element.original_name">
                    {{element.original_name}}
-                </span>
+                </div>
+                <div class="title-small" v-if="element.original_title">
+                  {{element.original_title}}
+                </div>
+                <!--showing the title that bellongs to tv avoding blanck title  -->
+                <div v-else="element.original_name">
+                   {{element.original_name}}
+                </div>
              </li>
              <li>
                 <!-- loop to print the star based on vote manage by a function -->
-                <span>voto</span>
+                <!-- <span>voto</span> -->
                 <i v-for="n in getVote(element.vote_average)"
                    class="fas fa-star"
                 ></i>
@@ -78,7 +87,7 @@
              </li>
              <li>
                 <!-- Printing the flag if the langue is it or eng  -->
-                <span>Lingua:</span>
+                <!-- <span>Lingua:</span> -->
                 <!-- matching the img with original_language -->
                 <img v-if="isLangFlag(element.original_language)" class="flag"
                   :src="getFlag(element.original_language)"
@@ -88,6 +97,7 @@
                 <span v-else>{{element.original_language}}</span>
              </li>
            </ul>
+
         </div>
       </div>
     </div>
