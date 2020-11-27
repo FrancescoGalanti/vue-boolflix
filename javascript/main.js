@@ -37,6 +37,7 @@ var app = new Vue({
            });
 
 
+
        },
 
        methods:{
@@ -44,6 +45,7 @@ var app = new Vue({
          SearchingMovie(){
           // avoid duplicate the result
            this.listaFiltered = []
+
            // Calling API FOR MOVIE
            axios.get('https://api.themoviedb.org/3/search/movie?' , {
                     params:{
@@ -59,9 +61,17 @@ var app = new Vue({
 
                     console.log(response)
                      // referenze varable //
-                     const res = response.data.results
+
+
                      // concatenation of the two calls to avoid possible delay in data reception
-                     this.listaFiltered = this.listaFiltered.concat(res)
+                     // Avoiding duplicate serach from start
+                     if (!this.movieSearched.includes.toLowercase("fantozzi")) {
+                        const res = response.data.results
+                        this.listaFiltered = this.listaFiltered.concat(res)
+                     }else {
+
+                     }
+
 
                   })
 
