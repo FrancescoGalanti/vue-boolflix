@@ -21,6 +21,8 @@
 .app-header{
   padding: 10px 10px 5px;
   background: #2e3a46;
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -32,8 +34,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
 }
 
 .search input{
@@ -71,8 +73,7 @@
 }
 
 /* movies */
-.movies-container,
-.search{
+.movies-container{
   background: #1e2d3b;
 }
 
