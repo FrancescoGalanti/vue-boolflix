@@ -20,7 +20,7 @@
       <!-- Input that filter the movie handled by vue -->
       <div class="search">
         <input v-model="movieSearched"
-         @keyup.enter="SearchingMovie"
+         @keyup="SearchingMovie"
          type="text">
          <!-- Buttom linnked a function managed by vue -->
          <button @click="SearchingMovie">Search</button>

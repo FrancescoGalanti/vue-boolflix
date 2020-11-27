@@ -94,8 +94,8 @@
 }
 
 img{
-  width: 250px;
-  height: 375px;
+  width: 160px;
+  height: 210px;
 }
 
 .img-wraper{
@@ -108,8 +108,8 @@ img{
  position: absolute;
  top: 0;
  left: 0;
- width: 250px;
- height: 375px;
+ width: 100%;
+ height: 210px;
  background: rgba(26, 188, 156, .7);
  opacity: 0;
  transition: opacity .4s;
@@ -124,7 +124,7 @@ img{
  color: #fff;
 }
 
-.img-wraper:hover .img-layover{
+.img-wraper:hover  .img-layover{
  opacity: 1;
 }
 li{
