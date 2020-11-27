@@ -30,12 +30,15 @@
         <!-- loop of array that print the filtered search -->
         <div class="movie" v-for="element in listaFiltered">
            <!-- showing th eimage if there is one -->
-           <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" alt=""
-              v-if="element.poster_path"
-           >
-           <!-- nOT showing the post but another image -->
-           <img v-else src="https://www.altavod.com/assets/images/poster-placeholder.png"
-           alt="">
+          <div class="img-wraper">
+            <img :src="`https://image.tmdb.org/t/p/w342${element.poster_path}`" alt=""
+               v-if="element.poster_path"
+            >
+            <!-- nOT showing the post but another image -->
+            <img v-else src="https://www.altavod.com/assets/images/poster-placeholder.png"
+            alt="">
+          </div>
+
            <ul>
              <li>
                 <span>Titolo:</span>
