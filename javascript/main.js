@@ -14,24 +14,27 @@ var app = new Vue({
    },
 
    created(){
-     // // Testing API search //
-     // axios.get('https://api.themoviedb.org/3/search/movie?' , {
-     //          params:{
-     //            api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
-     //            query: 'fantozzi'
-     //          }
-     //
-     //         })
-     //
-     //
-     //       .then(response => {
-     //         // default situation that leads to not printing any element if the string is empty
-     //          console.log(response)
-     //        })
-     //
-     //       .catch(error => {
-     //        console.log(error);
-     //       });
+     // Testing API search //
+     axios.get('https://api.themoviedb.org/3/search/movie?' , {
+              params:{
+                api_key: '63beb53b8b00ec7f4a87ec286b6e0c8d',
+                query: 'fantozzi'
+              }
+
+             })
+
+
+           .then(response => {
+             // deafaukt situation
+              const res = response.data.results;
+               this.listaFiltered = res;
+
+              console.log(response)
+            })
+
+           .catch(error => {
+            console.log(error);
+           });
 
 
        },
