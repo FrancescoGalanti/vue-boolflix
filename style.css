@@ -92,3 +92,18 @@
   text-align: center;
   background: #2e3a46;
 }
+
+img{
+  width: 250px;
+}
+
+li{
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+span{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
