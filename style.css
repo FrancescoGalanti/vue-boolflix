@@ -14,3 +14,30 @@
   width: 20px;
   height: 20px;
 }
+
+
+/* Header */
+
+.app-header{
+  padding: 10px 10px 5px;
+  background: #2e3a46;
+}
+
+
+.app-header img{
+  max-height: 50px;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search input{
+  padding-right: 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+}
